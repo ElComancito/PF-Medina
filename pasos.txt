@@ -1,0 +1,7 @@
+1. git init
+inicia git, solo se hace la primera vez
+2. git status
+para check que todo este bien o esté todo mal
+3. git add .
+esto permite agregar las modificiaciones  que hayamos hecho
+4. 
