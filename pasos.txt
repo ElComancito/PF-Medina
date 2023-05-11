@@ -4,4 +4,6 @@ inicia git, solo se hace la primera vez
 para check que todo este bien o esté todo mal
 3. git add .
 esto permite agregar las modificiaciones  que hayamos hecho
-4. 
+4. git commit -m "un mensaje cualquiera"
+5. git log 
+control de versiones
