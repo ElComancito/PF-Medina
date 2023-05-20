@@ -206,6 +206,7 @@ h1 {
     font-size: 15px;
     margin-bottom: 100px;
     width: 70%;
+    color: black;
   }
 
   img {
@@ -215,27 +216,28 @@ h1 {
 }
 
 #enfoques {
-  display: flex;
-  justify-content: center;
-  background-color: #000;
-  color: white;
-  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  background-color: black;
+  padding: 30px;
+  gap: 50px;
 }
 
-.sustentabilidad, .ambiente, .tecnicas {
-  width: 30%;
-  margin: 20px;
-  padding: 20px;
-  text-align: center;
+@media (max-width: 600px) {
+  #enfoques {
+    grid-template-columns: 1fr;
+  }
 }
+  h2 {
+    color: white;
+  }
 
-.sustentabilidad p, .ambiente p, .tecnicas p {
-  font-size: 11px;
-}
+  p {
+    color: white;
+  }
 
-.sustentabilidad h2, .ambiente h2, .tecnicas h2 {
-  margin-bottom: 10px;
-}
+
 
 /*Footer Nosotros*/
 
@@ -247,7 +249,7 @@ h1 {
   align-items: center;
 
   h1 {
-    color: white;
+    color: rgb(255, 255, 255);
     margin-top: 0;
     margin-bottom: 3px;
   }
@@ -549,7 +551,7 @@ nav {
   @media (max-width: 600px) {
     ul#foot {
       flex-wrap: wrap;
-      font-size: 14px;
+      font-size: 10px;
 
       li {
         margin: 5px;

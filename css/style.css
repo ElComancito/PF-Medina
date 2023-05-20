@@ -186,6 +186,7 @@ h1 {
   font-size: 15px;
   margin-bottom: 100px;
   width: 70%;
+  color: black;
 }
 .nosotros img {
   width: 100%;
@@ -193,26 +194,25 @@ h1 {
 }
 
 #enfoques {
-  display: flex;
-  justify-content: center;
-  background-color: #000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  background-color: black;
+  padding: 30px;
+  gap: 50px;
+}
+
+@media (max-width: 600px) {
+  #enfoques {
+    grid-template-columns: 1fr;
+  }
+}
+h2 {
   color: white;
-  margin-bottom: 0;
 }
 
-.sustentabilidad, .ambiente, .tecnicas {
-  width: 30%;
-  margin: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.sustentabilidad p, .ambiente p, .tecnicas p {
-  font-size: 11px;
-}
-
-.sustentabilidad h2, .ambiente h2, .tecnicas h2 {
-  margin-bottom: 10px;
+p {
+  color: white;
 }
 
 /*Footer Nosotros*/
@@ -224,7 +224,7 @@ h1 {
   align-items: center;
 }
 #footernosotros h1 {
-  color: white;
+  color: rgb(255, 255, 255);
   margin-top: 0;
   margin-bottom: 3px;
 }
@@ -493,7 +493,7 @@ nav ul#foot li a:hover {
 @media (max-width: 600px) {
   nav ul#foot {
     flex-wrap: wrap;
-    font-size: 14px;
+    font-size: 10px;
   }
   nav ul#foot li {
     margin: 5px;
