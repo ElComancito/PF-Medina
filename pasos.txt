@@ -9,3 +9,4 @@ esto permite agregar las modificiaciones  que hayamos hecho
 control de versiones
 
 sass --watch scss:css
+git push -u origin main

@@ -509,4 +509,26 @@ h1 {
   color: rgb(169, 40, 255);
 }
 
+#nav-link {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  font-size: 20px;
+  text-decoration: none;
+  color: #aaa;
+  font-size: 10px;
+}
+#nav-link:hover {
+  color: black;
+}
+#nav-link:not(:last-child)::after {
+  content: "|";
+  margin: 0 4px;
+  color: #aaa;
+}
+
 /*# sourceMappingURL=style.css.map */
