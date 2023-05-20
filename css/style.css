@@ -497,16 +497,16 @@ h1 {
   color: black;
 }
 #siguenos .facebook a:hover {
-  color: blue;
+  color: rgb(42, 42, 255);
 }
 #siguenos .instagram a:hover {
-  color: orangered;
+  color: rgb(255, 0, 106);
 }
 #siguenos .twitter a:hover {
-  color: rgb(0, 234, 255);
+  color: rgb(0, 132, 255);
 }
 #siguenos .linkedin a:hover {
-  color: rgb(153, 0, 255);
+  color: rgb(169, 40, 255);
 }
 
 /*# sourceMappingURL=style.css.map */

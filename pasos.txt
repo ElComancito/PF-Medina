@@ -7,3 +7,5 @@ esto permite agregar las modificiaciones  que hayamos hecho
 4. git commit -m "un mensaje cualquiera"
 5. git log 
 control de versiones
+
+sass --watch scss:css
