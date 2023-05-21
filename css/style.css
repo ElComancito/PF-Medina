@@ -366,6 +366,11 @@ p {
 @media (max-width: 600px) {
   .text {
     margin-left: 40px;
+  }
+  .text p {
+    text-align: justify;
+  }
+  .text h2 {
     text-align: center;
   }
 }
@@ -411,8 +416,13 @@ p {
 }
 @media (max-width: 600px) {
   .frank .grid-container .text {
-    text-align: center;
     margin-right: 30px;
+  }
+  .frank .grid-container .text p {
+    text-align: justify;
+  }
+  .frank .grid-container .text h2 {
+    text-align: center;
   }
   .frank .grid-container .text .text {
     margin-left: 0px;
@@ -483,6 +493,12 @@ p {
   .koolhaas text {
     text-align: center;
   }
+  .koolhaas text p {
+    text-align: justify;
+  }
+  .koolhaas text h2 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
@@ -520,6 +536,16 @@ p {
   .contacto-container {
     grid-template-columns: 1fr;
     padding: 30px;
+  }
+  p {
+    text-align: center;
+    margin: 0px auto;
+    font-size: 16px;
+    width: 100%;
+  }
+  .contacto-item p {
+    text-align: start;
+    margin: 0px;
   }
 }
 @media (min-width: 601px) and (max-width: 900px) {
