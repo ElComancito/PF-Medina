@@ -365,6 +365,7 @@ p {
 }
 @media (max-width: 600px) {
   .text {
+    margin-left: 40px;
     text-align: center;
   }
 }
@@ -383,6 +384,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   margin-bottom: 100px;
+  padding: 20px;
 }
 .frank .grid-container {
   display: grid;
@@ -399,14 +401,30 @@ p {
   margin-bottom: 50px;
   justify-self: center;
 }
+.frank .grid-container p, .frank .grid-container h2 {
+  color: black;
+}
 .frank .grid-container .text {
   grid-column: 1;
   grid-row: 2;
   text-align: start;
 }
-.frank .grid-container p, .frank .grid-container h2 {
-  color: black;
-  margin-left: 50px;
+@media (max-width: 600px) {
+  .frank .grid-container .text {
+    text-align: center;
+    margin-right: 30px;
+  }
+  .frank .grid-container .text .text {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .frank .grid-container .text {
+    text-align: start;
+  }
+  .frank .grid-container .text .text h2 {
+    margin: 0px;
+  }
 }
 @media (min-width: 901px) {
   .frank .grid-container {
@@ -419,6 +437,7 @@ p {
   .frank .grid-container .text {
     grid-column: 1;
     grid-row: 1;
+    margin-left: 50px;
   }
 }
 
