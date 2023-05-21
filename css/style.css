@@ -195,6 +195,10 @@ h1 {
 @media (max-width: 900px) {
   .nosotros h1 {
     margin-top: 50px;
+    text-align: center;
+  }
+  .nosotros p {
+    text-align: justify;
   }
 }
 
@@ -212,12 +216,30 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+@media (min-width: 601px) and (max-width: 900px) {
+  .grid-item p {
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  .grid-item p {
+    text-align: center;
+  }
+}
+@media (min-width: 901px) {
+  .grid-item p {
+    text-align: center;
+  }
+}
+
 h2 {
+  text-align: center;
   color: white;
 }
 
 p {
   color: white;
+  text-align: justify;
 }
 
 /*Footer Nosotros*/
@@ -364,9 +386,6 @@ p {
   text-align: start;
 }
 @media (max-width: 600px) {
-  .text {
-    margin-left: 40px;
-  }
   .text p {
     text-align: justify;
   }
@@ -415,9 +434,6 @@ p {
   text-align: start;
 }
 @media (max-width: 600px) {
-  .frank .grid-container .text {
-    margin-right: 30px;
-  }
   .frank .grid-container .text p {
     text-align: justify;
   }

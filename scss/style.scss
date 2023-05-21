@@ -216,7 +216,12 @@ h1 {
   @media (max-width: 900px) {
     h1 {
       margin-top: 50px;
+      text-align: center;
     }
+    p {
+      text-align: justify;
+    }
+
   }
 }
 
@@ -234,12 +239,33 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.grid-item {
+  @media (min-width: 601px) and (max-width: 900px) {
+    p {
+      text-align: center;
+    }
+  }
+  @media (max-width: 600px) {
+    p {
+      text-align: center;
+    }
+  }
+  @media (min-width: 901px){
+    p {
+      text-align: center;
+    }
+  }
+}
+
   h2 {
+    text-align: center;
     color: white;
   }
 
   p {
     color: white;
+    text-align: justify;
   }
 
 
@@ -399,7 +425,6 @@ h1 {
   text-align: start;
 
   @media (max-width: 600px) {
-    margin-left: 40px;
 
     p{
       text-align: justify;
@@ -458,7 +483,7 @@ h1 {
 
       @media (max-width: 600px) {
 
-        margin-right: 30px;
+
 
         p {
           text-align: justify;
