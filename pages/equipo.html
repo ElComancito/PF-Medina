@@ -7,12 +7,17 @@
     <link rel="shortcut icon" href="../imagenes/iconos/6819232.png" type="image/x-icon">
     <!--link de boostrap antes de mi css siempre por cascada-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!--AOS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--mi link css-->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
-    <title>EQUIPO</title>
+    <!--Etiqueta SEO-->
+    <meta name="description" content="Te damos la bienvenida la sección de Equipo. Aquí podrás saber sobre el equipo principal de la empresa y su curriculum.">
+    <meta name="keywords" content="ARQUITECTURA, RECONSTRUYE, RECICLAJE, CASAS, APARTAMENTOS, CONSTRUCCIÓN, ESTUDIO DE ARQUITECTURA, EQUIPO">
+    <title>Re Construye | EQUIPO</title>
 </head>
 <body>
     <header id="arriba">
@@ -54,7 +59,7 @@
     <section id="equipo">
         <h1>NUESTRO EQUIPO</h1>
 
-        <div class="zaha">
+        <div class="zaha" data-aos="fade-right">
           <div class="grid-container">
             <img src="../imagenes/equipo/zaha hadid.jpg" alt="Zaha Hadid">
             <div class="text">
@@ -64,7 +69,7 @@
           </div>
         </div>
 
-        <div class="frank">
+        <div class="frank" data-aos="fade-left">
           <div class="grid-container">
             <img src="../imagenes/equipo/frank-gehry.jpeg" alt="Frank Gehry">
             <div class="text">
@@ -74,7 +79,7 @@
           </div>
         </div>             
 
-        <div class="koolhaas">
+        <div class="koolhaas" data-aos="fade-right">
           <div class="grid-container">
             <img src="../imagenes/equipo/Rem Koolhaas.jpg" alt="Rem Koolhaas">
             <div class="text">
@@ -87,7 +92,7 @@
 
       <footer id="footernosotros">
         <nav>
-            <ul id="foot"> <!--enlaces relativos-->
+            <ul id="foot">
                 <li>
                     <a class="links" href="../index.html">INICIO</a>
                 </li>
@@ -109,29 +114,44 @@
             </ul>
         </nav>
         <div id="siguenos">
-            <p>SIGUENOS:</p>
-            <nav>
-                <ul class="siguenoslink">
-                    <li class="facebook">
-                        <a href="https://www.facebook.com/Coderhouse/" target="_blank">Facebook</a>
+          <nav>
+              <ul class="siguenoslink">
+                  <li class="facebook">
+                      <a href="https://www.facebook.com/Coderhouse/" target="_blank">
+                        <iconify-icon icon="ant-design:facebook-filled"></iconify-icon>
+                      </a>
                     </li>
-                    <li class="instagram">
-                        <a href="https://www.instagram.com/coderhouse/" target="_blank">Instagram</a>
-                    </li>
-                    <li class="twitter">
-                        <a href="https://twitter.com/coderhouse" target="_blank">Twitter</a>
-                    </li>
-                    <li class="linkedin">
-                        <a href="https://www.linkedin.com/school/coderhouse/" target="_blank">Linkedin</a>
-                    </li>
-                </ul>
-            </nav> 
-        </div>
+                  <li class="instagram">
+                      <a href="https://www.instagram.com/coderhouse/" target="_blank">
+                          <iconify-icon icon="mdi:instagram"></iconify-icon>
+                      </a>
+                  </li>
+                  <li class="twitter">                        
+                      <a href="https://twitter.com/coderhouse" target="_blank">
+                          <iconify-icon icon="formkit:twitter"></iconify-icon></iconify-icon>
+                      </a>
+                  </li>
+                  <li class="linkedin">                        
+                      <a href="https://www.linkedin.com/school/coderhouse/" target="_blank">
+                          <iconify-icon icon="mdi:linkedin"></iconify-icon>
+                      </a>
+                  </li>
+              </ul>
+          </nav> 
+      </div>
 
-        <p>Todos los derechos reservados © 2023 | Pagina creada por Matias Medina.</p>
-    </footer>
-<!--script de boostrap-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+      <p>Todos los derechos reservados © 2023 | Pagina creada por Matias Medina.</p>
+  </footer>
+
+  <!--script de boostrap-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  
+  <!--script de iconify-->
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!--script AOS-->
+ <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ <script> AOS.init();</script>
 
 </body>
 </html>

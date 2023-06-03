@@ -11,15 +11,6 @@ header {
   align-items: center;
 }
 
-/* #arriba h1 {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: auto;
-    margin-left: 0;
-    font-size: 23px;
-  } */
-
 #arriba p {
   color: black;
   text-decoration: none;
@@ -123,8 +114,6 @@ h1 {
 
 #proyecto {
   margin-top: 90px;
-
-  /* margin-bottom: 90px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,8 +121,6 @@ h1 {
 
   img {
     max-width: 100%;
-
-    /* filter: grayscale(70%); */
   }
 }
 
@@ -198,8 +185,8 @@ h1 {
 
   h1 {
     font-size: 3rem;
-    margin-top: 200px;
-    margin-bottom: 30px;
+    margin-top: 150px;
+    margin-bottom: 60px;
   }
 
   p {
@@ -216,6 +203,7 @@ h1 {
   @media (max-width: 900px) {
     h1 {
       margin-top: 50px;
+      margin-bottom: 30px;
       text-align: center;
     }
     p {
@@ -268,7 +256,78 @@ h1 {
     text-align: justify;
   }
 
+/*NOTICIAS*/
+.noticias {
+  margin-bottom: 100px;
+  padding: 20px;
+  border-radius: 10px;
 
+  p, h2 {
+    color: black;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  p{
+    color: #aaa;
+  }
+}
+
+.grid-container-noticias {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0px;
+  margin-bottom: 50px;
+
+  @media (min-width: 601px) and (max-width:900) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 901px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.noticiasdiv img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  justify-self: center;
+  align-self: center;
+}
+
+.text {
+  text-align: start;
+
+  @media (max-width: 600px) {
+
+    p{
+      text-align: justify;
+      font-size: 8px;
+    }
+    
+    h2{
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+
+}
+
+@media (max-width: 600px) {
+  .grid-container-noticias {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+
+  .img {
+    align-content: center;
+  }
+}
 
 /*Footer Nosotros*/
 
@@ -327,9 +386,9 @@ h1 {
   }
 
   div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -337,8 +396,9 @@ h1 {
   }
 
   img {
-    width: 25%;
-    height: auto;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -366,12 +426,29 @@ h1 {
       opacity: 1;
     }
   }
-  @media (max-width: 900px) {
-    h1{
-      margin-top: 50px;
-    }
-    
+}
+
+@media (max-width: 900px) {
+  h1{
+    margin-top: 50px;
   }
+}
+
+@media (max-width: 600px) {
+.galeria div {
+  grid-template-columns: 1fr;
+}
+.galeria img {
+  width: 90%;
+  margin: 15px;
+  border-radius: 10px;
+}
+}
+
+@media (min-width: 601px) and (max-width: 899px){
+.galeria img { 
+  height: 150px;
+}
 }
 
 /*Titulos, texto e imagenes para seccion equipo*/
@@ -601,6 +678,17 @@ h1 {
 }
 
 /*formulario*/
+.form {
+  @media (max-width: 600px){
+    .form-group textarea, .form-group input{
+      width: 85%;
+    }
+    & .botonenviar, .botonborrar {
+      font-size: 10px;
+      padding: 10px 20px;
+    }
+  }
+}
 
 .contacto-container {
   display: grid;
@@ -682,6 +770,7 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  font-size: 10x;
 }
 
 .botonenviar {
@@ -786,8 +875,8 @@ nav {
 
 #siguenos {
   display: flex;
-  align-items: center;
-  flex-direction: center;
+  align-items: start;
+  flex-direction: column;
   margin-top: 30px;
   color: white;
   margin-bottom: 30px;
@@ -797,6 +886,14 @@ nav {
   }
 }
 
+.siguenoslink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px;
+}
+
 .siguenoslink li {
   list-style: none;
 }
@@ -804,7 +901,7 @@ nav {
 .facebook a, .instagram a, .twitter a, .linkedin a {
   color: white;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 25px;
   margin-left: 5px;
   margin-right: 3px;
 }
