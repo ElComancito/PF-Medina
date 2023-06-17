@@ -48,6 +48,137 @@ header {
   color: black;
 }
 
+/*footer general*/
+#footer {
+  background-color: black;
+  margin-top: 40px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#footer h1 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 3px;
+}
+#footer p {
+  margin-top: 0;
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
+
+/*links del footer*/
+nav ul#foot {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 17px;
+}
+nav ul#foot li {
+  padding: 0;
+}
+nav ul#foot li:not(:last-child)::after {
+  content: "|";
+  margin: 0 4px;
+  color: #ffffff;
+}
+nav ul#foot li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 10px;
+}
+nav ul#foot li a:hover {
+  color: #5a92b1;
+}
+@media (max-width: 600px) {
+  nav ul#foot {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+  nav ul#foot li {
+    margin: 5px;
+  }
+  nav ul#foot li:not(:last-child)::after {
+    content: none;
+  }
+}
+
+/*siguenos footer*/
+#siguenos {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  margin-top: 30px;
+  color: white;
+  margin-bottom: 30px;
+}
+#siguenos p {
+  margin-top: 4px;
+}
+
+.siguenoslink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0px;
+}
+
+.siguenoslink li {
+  list-style: none;
+}
+
+.facebook a, .instagram a, .twitter a, .linkedin a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-right: 3px;
+}
+
+#siguenos li a:hover {
+  color: black;
+}
+#siguenos .facebook a:hover {
+  color: rgb(42, 42, 255);
+}
+#siguenos .instagram a:hover {
+  color: rgb(255, 0, 106);
+}
+#siguenos .twitter a:hover {
+  color: rgb(0, 132, 255);
+}
+#siguenos .linkedin a:hover {
+  color: rgb(169, 40, 255);
+}
+
+.container-fluid {
+  list-style: none;
+  background-color: none;
+}
+
+#navbarNav {
+  list-style: none;
+}
+#navbarNav li {
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+#navbarNav li a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 12px;
+}
+#navbarNav li a:hover {
+  color: black;
+}
+
 /*MAIN PAGE*/
 #logo {
   display: flex;
@@ -68,42 +199,6 @@ h1 {
   justify-content: center;
   align-items: center;
   margin: 100px auto;
-}
-
-#botones {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.botongaleria button {
-  background-color: #444;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 10px;
-}
-
-.botoncontacto button {
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 10px;
-  margin-left: 10px;
-}
-
-.botongaleria button:hover {
-  background-color: #0e79b2;
-}
-
-.botoncontacto button:hover {
-  background-color: #0e79b2;
-  color: #fff;
-  border-color: #0e79b2;
 }
 
 #proyecto {
@@ -135,27 +230,6 @@ h1 {
 }
 #enlaces a:hover {
   color: black;
-}
-
-/*footer general*/
-#footer {
-  background-color: black;
-  margin-top: 40px;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#footer h1 {
-  color: white;
-  margin-top: 0;
-  margin-bottom: 3px;
-}
-#footer p {
-  margin-top: 0;
-  color: white;
-  font-size: 10px;
-  text-align: center;
 }
 
 /*NOSOTROS*/
@@ -409,6 +483,15 @@ p {
   }
 }
 /*Titulos, texto e imagenes para seccion equipo*/
+#equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+
 #equipo h1 {
   margin-top: 110px;
   margin-bottom: 150px;
@@ -620,7 +703,7 @@ p {
   .form .form-group textarea, .form .form-group input {
     width: 85%;
   }
-  .form .botonenviar, .form .botonborrar {
+  .form .botonenviar, .form .botongaleria button, .botongaleria .form button, .form .botonborrar, .form .botoncontacto button, .botoncontacto .form button {
     font-size: 10px;
     padding: 10px 20px;
   }
@@ -644,7 +727,7 @@ p {
     width: 100%;
   }
   .contacto-item p {
-    text-align: start;
+    text-align: center;
     margin: 0px;
   }
 }
@@ -660,7 +743,7 @@ p {
     padding: 30px;
   }
 }
-@media (min-width: 901px) and (max-width: 600px) {
+@media (max-width: 600px) {
   .form h1 {
     margin-top: 70px;
   }
@@ -693,51 +776,7 @@ p {
   color: black;
 }
 
-/*botones*/
-.buttons {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  font-size: 10x;
-}
-
-.botonenviar {
-  background-color: #444;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-}
-.botonenviar:hover {
-  background-color: #0e79b2;
-  color: #fff;
-  border-color: #0e79b2;
-}
-
-.botonborrar {
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #333;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.botonborrar:hover {
-  background-color: #0e79b2;
-  color: #fff;
-  border-color: #0e79b2;
-}
-
 /*metodos de contacto iconos y ultimo texto*/
-#equipo {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  justify-content: center;
-  margin-top: 30px;
-}
-
 .contacto-item {
   display: flex;
   align-items: center;
@@ -747,114 +786,64 @@ p {
   padding-top: 40px;
 }
 
-/*links del footer*/
-nav ul#foot {
-  list-style: none;
+/*botones*/
+#botones {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 0;
-  font-size: 17px;
+  align-items: center;
+  margin-top: 50px;
 }
-nav ul#foot li {
-  padding: 0;
+
+.buttons, .botonborrar, .botoncontacto button, .botonenviar, .botongaleria button {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 10x;
 }
-nav ul#foot li:not(:last-child)::after {
-  content: "|";
-  margin: 0 4px;
-  color: #ffffff;
+
+.botonenviar, .botongaleria button {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
 }
-nav ul#foot li a {
-  text-decoration: none;
-  color: #ffffff;
+.botonenviar:hover, .botongaleria button:hover {
+  background-color: #0e79b2;
+  color: #fff;
+  border-color: #0e79b2;
+}
+
+.botonborrar, .botoncontacto button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.botonborrar:hover, .botoncontacto button:hover {
+  background-color: #0e79b2;
+  color: #fff;
+  border-color: #0e79b2;
+}
+
+.botoncontacto button {
+  padding: 5px 10px;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.botongaleria button {
+  padding: 5px 10px;
   font-size: 10px;
 }
-nav ul#foot li a:hover {
-  color: #5a92b1;
-}
-@media (max-width: 600px) {
-  nav ul#foot {
-    flex-wrap: wrap;
-    font-size: 10px;
-  }
-  nav ul#foot li {
-    margin: 5px;
-  }
-  nav ul#foot li:not(:last-child)::after {
-    content: none;
-  }
+
+.botonenviar, .botongaleria button {
+  padding: 10px 20px;
 }
 
-/*siguenos footer*/
-#siguenos {
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  margin-top: 30px;
-  color: white;
-  margin-bottom: 30px;
-}
-#siguenos p {
-  margin-top: 4px;
-}
-
-.siguenoslink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 0px;
-}
-
-.siguenoslink li {
-  list-style: none;
-}
-
-.facebook a, .instagram a, .twitter a, .linkedin a {
-  color: white;
-  text-decoration: none;
-  font-size: 25px;
-  margin-left: 5px;
-  margin-right: 3px;
-}
-
-#siguenos li a:hover {
-  color: black;
-}
-#siguenos .facebook a:hover {
-  color: rgb(42, 42, 255);
-}
-#siguenos .instagram a:hover {
-  color: rgb(255, 0, 106);
-}
-#siguenos .twitter a:hover {
-  color: rgb(0, 132, 255);
-}
-#siguenos .linkedin a:hover {
-  color: rgb(169, 40, 255);
-}
-
-.container-fluid {
-  list-style: none;
-  background-color: none;
-}
-
-#navbarNav {
-  list-style: none;
-}
-#navbarNav li {
-  list-style: none;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
-#navbarNav li a {
-  text-decoration: none;
-  color: #aaa;
-  font-size: 12px;
-}
-#navbarNav li a:hover {
-  color: black;
+.botonborrar, .botoncontacto button {
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
