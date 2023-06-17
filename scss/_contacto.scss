@@ -1,0 +1,167 @@
+/*CONTACTO*/
+
+.google {
+    width: 100%;
+    height: 200px;
+    filter: grayscale(100%);
+    margin-bottom: 0;
+    margin-top: 60px;
+    border-top: 2px solid black;
+  
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  /*formulario*/
+  .form {
+    @media (max-width: 600px){
+      .form-group textarea, .form-group input{
+        width: 85%;
+      }
+      & .botonenviar, .botonborrar {
+        font-size: 10px;
+        padding: 10px 20px;
+      }
+    }
+  }
+  
+  .contacto-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  
+  @media (max-width: 600px) {
+    .contacto-container {
+      grid-template-columns: 1fr;
+      padding: 30px;
+    }
+     p {
+      text-align: center;
+      margin: 0px auto;
+      font-size: 16px;
+      width: 100%;
+    }
+  
+    .contacto-item p {
+      text-align: start;
+      margin: 0px
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .contacto-container {
+      grid-template-columns: 1fr 1fr;
+      padding: 30px;
+    }
+  }
+  
+  @media (min-width: 901px) {
+    .contacto-container {
+      grid-template-columns: 1fr 1fr;
+      padding: 30px;
+    }
+    .contacto p {
+        margin-left: 150px;
+    }
+    .contacto-ico {
+        margin-left: 140px;
+    }
+    
+  @media (max-width: 600px){
+    .form h1 {
+      margin-top: 70px;
+    }
+  }
+  }
+  
+  .contacto h2 {
+    color: black;
+  }
+  
+  .contacto p {
+    width: 50%;
+    margin-top: 40px;
+    color: black
+
+  }
+  
+  .contacto-ico {
+    margin-top: 5px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  
+    label {
+      margin-bottom: 5px;
+    }
+  }
+  
+  .form h2 {
+    color: black
+  }
+  /*botones*/
+
+.buttons {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 10x;
+  }
+  
+  .botonenviar {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+  
+    &:hover {
+      background-color: #0e79b2;
+      color: #fff;
+      border-color: #0e79b2;
+    }
+  }
+  
+  .botonborrar {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  
+    &:hover {
+      background-color: #0e79b2;
+      color: #fff;
+      border-color: #0e79b2;
+    }
+  }
+  
+  /*metodos de contacto iconos y ultimo texto*/
+  
+  #equipo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .contacto-item {
+    display: flex;
+    align-items: center;
+  
+    i {
+      margin-right: 20px;
+      padding-top: 40px;
+    }
+  }
