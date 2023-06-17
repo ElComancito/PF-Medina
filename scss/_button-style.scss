@@ -1,0 +1,68 @@
+ /*botones*/
+
+#botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+.buttons {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 10x;
+  }
+
+.botonenviar {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    
+    &:hover {
+      background-color: #0e79b2;
+      color: #fff;
+      border-color: #0e79b2;
+    }
+  }
+  
+  .botonborrar {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 5px;
+  
+    &:hover {
+      background-color: #0e79b2;
+      color: #fff;
+      border-color: #0e79b2;
+    }
+  }
+
+  .botoncontacto button {
+    @extend .botonborrar;
+    padding: 5px 10px;
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+  .botongaleria button {
+    @extend .botonenviar;
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  .botonenviar {
+    @extend .buttons;
+    @extend .botonenviar;
+    padding: 10px 20px;
+  }
+
+  .botonborrar {
+    @extend .buttons;
+    @extend .botonborrar;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
