@@ -225,13 +225,17 @@ h1 {
 #enlaces a {
   font-size: 60px;
   color: #aaa;
-  text-decoration: none;
   transition: color 0.3s ease;
 }
 #enlaces a:hover {
   color: black;
 }
 
+@media (max-width: 800px) {
+  #botones a {
+    font-size: 10px;
+  }
+}
 /*NOSOTROS*/
 .nosotros {
   display: flex;
@@ -364,6 +368,10 @@ p {
   }
 }
 
+.text a {
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   .grid-container-noticias {
     display: grid;
@@ -486,9 +494,9 @@ p {
 #equipo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: start;
+  justify-content: start;
+  text-align: start;
   margin-top: 30px;
 }
 
@@ -699,62 +707,14 @@ p {
 }
 
 /*formulario*/
-@media (max-width: 600px) {
-  .form .form-group textarea, .form .form-group input {
-    width: 85%;
-  }
-  .form .botonenviar, .form .botongaleria button, .botongaleria .form button, .form .botonborrar, .form .botoncontacto button, .botoncontacto .form button {
-    font-size: 10px;
-    padding: 10px 20px;
-  }
-}
-
-.contacto-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-
-@media (max-width: 600px) {
-  .contacto-container {
-    grid-template-columns: 1fr;
-    padding: 30px;
-  }
-  p {
-    text-align: center;
-    margin: 0px auto;
-    font-size: 16px;
-    width: 100%;
-  }
-  .contacto-item p {
-    text-align: center;
-    margin: 0px;
-  }
-}
-@media (min-width: 601px) and (max-width: 900px) {
-  .contacto-container {
-    grid-template-columns: 1fr 1fr;
-    padding: 30px;
-  }
-}
-@media (min-width: 901px) {
-  .contacto-container {
-    grid-template-columns: 1fr 1fr;
-    padding: 30px;
-  }
-}
-@media (max-width: 600px) {
-  .form h1 {
-    margin-top: 70px;
-  }
-}
 .contacto h2 {
   color: black;
 }
 
 .contacto p {
-  width: 50%;
+  width: 90%;
   margin-top: 40px;
+  margin-bottom: 40px;
   color: black;
 }
 
@@ -782,33 +742,100 @@ p {
   align-items: center;
 }
 .contacto-item i {
+  margin-bottom: 40px;
   margin-right: 20px;
   padding-top: 40px;
 }
 
+@media (max-width: 600px) {
+  .form .form-group textarea, .form .form-group input {
+    width: 100%;
+  }
+  .form .botonenviar, .form .botongaleria button, .botongaleria .form button, .form .botonborrar, .form .botoncontacto button, .botoncontacto .form button {
+    font-size: 10px;
+    padding: 10px 20px;
+  }
+}
+
+.contacto-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+@media (max-width: 600px) {
+  .contacto-container {
+    grid-template-columns: 1fr;
+    padding: 30px;
+  }
+  p {
+    text-align: justify;
+    margin: 0px auto;
+    font-size: 12px;
+    width: 90%;
+  }
+  .contacto-item p {
+    text-align: center;
+    margin: 0px;
+  }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .contacto-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+  }
+}
+@media (min-width: 901px) {
+  .contacto-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 30px;
+  }
+  .contacto p {
+    margin-left: 60px;
+  }
+  .contacto-item {
+    margin-left: 110px;
+  }
+  .contacto-item p {
+    margin-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .form h1 {
+    margin-top: 70px;
+  }
+}
 /*botones*/
 #botones {
   display: flex;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+}
+
+#botones a {
   text-decoration: none;
 }
 
 .buttons, .botonborrar, .botoncontacto button, .botonenviar, .botongaleria button {
-  display: block;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 30px;
   font-size: 10x;
-  text-decoration: none;
+  gap: 10px;
 }
 
 .botonenviar, .botongaleria button {
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: #444;
   color: #fff;
   border: none;
   border-radius: 5px;
+  text-align: center;
 }
 .botonenviar:hover, .botongaleria button:hover {
   background-color: #0e79b2;
@@ -817,6 +844,8 @@ p {
 }
 
 .botonborrar, .botoncontacto button {
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: #fff;
   color: #000;
   border: 1px solid #000;
@@ -829,14 +858,15 @@ p {
 }
 
 .botoncontacto button {
+  display: flex;
+  margin: 0;
   padding: 5px 10px;
-  font-size: 10px;
-  margin-left: 10px;
 }
 
 .botongaleria button {
+  display: flex;
+  margin: 0;
   padding: 5px 10px;
-  font-size: 10px;
 }
 
 .botonenviar, .botongaleria button {

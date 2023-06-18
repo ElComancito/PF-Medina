@@ -15,70 +15,15 @@
   }
   
   /*formulario*/
-  .form {
-    @media (max-width: 600px){
-      .form-group textarea, .form-group input{
-        width: 85%;
-      }
-      & .botonenviar, .botonborrar {
-        font-size: 10px;
-        padding: 10px 20px;
-      }
-    }
-  }
-  
-  .contacto-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-  }
-  
-  @media (max-width: 600px) {
-    .contacto-container {
-      grid-template-columns: 1fr;
-      padding: 30px;
-    }
-     p {
-      text-align: center;
-      margin: 0px auto;
-      font-size: 16px;
-      width: 100%;
-    }
-  
-    .contacto-item p {
-      text-align:center;
-      margin: 0px
-    }
-  }
-  
-  @media (min-width: 601px) and (max-width: 900px) {
-    .contacto-container {
-      grid-template-columns: 1fr 1fr;
-      padding: 30px;
-    }
-  }
-  
-  @media (min-width: 901px) {
-    .contacto-container {
-      grid-template-columns: 1fr 1fr;
-      padding: 30px;
-    }
-  }
-    
-  @media (max-width: 600px){
-    .form h1 {
-      margin-top: 70px;
-    }
-  }
-  
   
   .contacto h2 {
     color: black;
   }
   
   .contacto p {
-    width: 50%;
+    width: 90%;
     margin-top: 40px;
+    margin-bottom: 40px;
     color: black;
   }
   
@@ -108,7 +53,74 @@
     align-items: center;
   
     i {
+      margin-bottom: 40px;
       margin-right: 20px;
       padding-top: 40px;
+    }
+  }
+
+  .form {
+    @media (max-width: 600px){
+      .form-group textarea, .form-group input{
+        width: 100%;
+      }
+      & .botonenviar, .botonborrar {
+        font-size: 10px;
+        padding: 10px 20px;
+      }
+    }
+
+  }
+  
+  .contacto-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  
+  @media (max-width: 600px) {
+    .contacto-container {
+      grid-template-columns: 1fr;
+      padding: 30px;
+    }
+     p {
+      text-align: justify;
+      margin: 0px auto;
+      font-size: 12px;
+      width: 90%;
+    }
+  
+    .contacto-item p {
+      text-align:center;
+      margin: 0px
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 900px) {
+    .contacto-container {
+      grid-template-columns: 1fr 1fr;
+      padding: 30px;
+    }
+  }
+  
+  @media (min-width: 901px) {
+    .contacto-container {
+      grid-template-columns: 1fr 1fr;
+      padding: 30px;
+    }
+    .contacto p{
+      margin-left: 60px;
+    }
+    .contacto-item {
+      margin-left: 110px;
+    }
+    .contacto-item p {
+      margin-left: 0;
+    }
+  }
+    
+  @media (max-width: 600px){
+    .form h1 {
+      margin-top: 70px;
     }
   }
