@@ -792,6 +792,7 @@ p {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  text-decoration: none;
 }
 
 .buttons, .botonborrar, .botoncontacto button, .botonenviar, .botongaleria button {
@@ -800,6 +801,7 @@ p {
   align-items: center;
   margin-top: 50px;
   font-size: 10x;
+  text-decoration: none;
 }
 
 .botonenviar, .botongaleria button {
