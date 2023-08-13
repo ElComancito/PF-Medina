@@ -828,6 +828,16 @@ p {
   gap: 10px;
 }
 
+.buttonscarrito, .botoncarrito button {
+  display: grid;
+  justify-content: end;
+  align-items: center;
+  margin-right: 50px;
+  margin-top: 30px;
+  font-size: 10x;
+  gap: 10px;
+}
+
 .botonenviar, .botongaleria button {
   display: grid;
   grid-template-columns: 1fr;
@@ -843,7 +853,7 @@ p {
   border-color: #0e79b2;
 }
 
-.botonborrar, .botoncontacto button {
+.botonborrar, .botoncontacto, button {
   display: grid;
   grid-template-columns: 1fr;
   background-color: #fff;
@@ -851,7 +861,7 @@ p {
   border: 1px solid #000;
   border-radius: 5px;
 }
-.botonborrar:hover, .botoncontacto button:hover {
+.botonborrar:hover, .botoncarrito:hover, .botoncontacto button:hover {
   background-color: #0e79b2;
   color: #fff;
   border-color: #0e79b2;
@@ -873,7 +883,7 @@ p {
   padding: 10px 20px;
 }
 
-.botonborrar, .botoncontacto button {
+.botonborrar, .botoncarrito, .botoncontacto button {
   padding: 10px 20px;
   cursor: pointer;
 }
