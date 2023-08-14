@@ -52,7 +52,7 @@ function Agregaralcarrito(producto) {
         return;
     }
 
-    carrito.push(producto);
+    carritoGuardado.push(producto);
     producto.stock--;
     contenedorsimple_20pies.innerText = `Stock: ${producto1.stock}`;
     contenedorsimple_30pies.innerText = `Stock: ${producto2.stock}`;
@@ -62,9 +62,9 @@ function Agregaralcarrito(producto) {
     contenedorcasa_45m2.innerText = `Stock: ${producto6.stock}`;
     contenedorcasa_50m2.innerText = `Stock: ${producto7.stock}`;
     contenedorcasa_60m2.innerText = `Stock: ${producto8.stock}`;
-    preciototal += producto.precio;
-    console.table(carrito);
-    console.log('Precio total: $', preciototal);
+    precioTotalGuardado += producto.precio;
+    console.table(carritoGuardado);
+    console.log('Precio total: $', precioTotalGuardado);
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -122,7 +122,7 @@ let boton9 = document.getElementById('header__button__carrito');
 boton9.addEventListener('click',mostrarAlerta)
 
 function mostrarAlerta() {
-    if (carrito.length === 0) {
+    if (carritoGuardado.length === 0) {
         Swal.fire({
             title: 'VACÍO',
             text: 'El carrito está vacío. Agrega productos para continuar.',
@@ -133,10 +133,10 @@ function mostrarAlerta() {
     }
 
     let mensaje = "";
-    for (let producto of carrito) {
+    for (let producto of carritoGuardado) {
         mensaje += `${producto.tipo} ${producto.modelo}<br>`;
     }
-    mensaje += `<br>Total: $${preciototal}`;
+    mensaje += `<br>Total: $${precioTotalGuardado}`;
 
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -163,11 +163,11 @@ function mostrarAlerta() {
                 'success'
             );
            
-            for (let producto of carrito) {
+            for (let producto of carritoGuardado) {
                 producto.stock--;  
             }
-            carrito = [];
-            preciototal = 0;
+            carritoGuardado = [];
+            precioTotalGuardado = 0;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
             swalWithBootstrapButtons.fire(
                 'Compra cancelada.',
@@ -176,7 +176,7 @@ function mostrarAlerta() {
             );
 
             // Devolver el stock y vaciar el carrito
-            for (let producto of carrito) {
+            for (let producto of carritoGuardado) {
                 producto.stock++; 
                 contenedorsimple_20pies.innerText = `Stock: ${producto1.stock}`;
                 contenedorsimple_30pies.innerText = `Stock: ${producto2.stock}`;
@@ -187,8 +187,41 @@ function mostrarAlerta() {
                 contenedorcasa_50m2.innerText = `Stock: ${producto7.stock}`;
                 contenedorcasa_60m2.innerText = `Stock: ${producto8.stock}`;    
             }
-            carrito = [];
-            preciototal = 0;
+            carritoGuardado = [];
+            precioTotalGuardado = 0;
         }
     });
 }
+
+// Guardar productos en localStorage
+localStorage.setItem('productos', JSON.stringify(productos));
+
+// Recuperar productos de localStorage
+let productosGuardados = JSON.parse(localStorage.getItem('productos'));
+// Guardar carrito en localStorage
+localStorage.setItem('carrito', JSON.stringify(carrito));
+
+// Guardar precio total en localStorage
+localStorage.setItem('preciototal', preciototal);
+
+// Recuperar carrito y precio total desde localStorage
+let carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
+let precioTotalGuardado = parseFloat(localStorage.getItem('preciototal')) || 0;
+
+const irArribaBtn = document.getElementById('irArribaBtn');
+
+irArribaBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Mostrar u ocultar el botón según el desplazamiento
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        irArribaBtn.style.display = 'block';
+    } else {
+        irArribaBtn.style.display = 'none';
+    }
+});
