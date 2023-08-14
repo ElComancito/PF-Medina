@@ -193,6 +193,8 @@ function mostrarAlerta() {
     });
 }
 
+//JSON Y LOCALSTORAGE
+
 // Guardar productos en localStorage
 localStorage.setItem('productos', JSON.stringify(productos));
 
@@ -208,6 +210,35 @@ localStorage.setItem('preciototal', preciototal);
 let carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
 let precioTotalGuardado = parseFloat(localStorage.getItem('preciototal')) || 0;
 
+
+// FORMULARIO de naim
+const form = document.querySelector('.form');
+const inputs = form.querySelectorAll('.input');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const formData = {};
+  let nombre = '';
+  inputs.forEach(input => {
+    formData[input.getAttribute('placeholder')] = input.value;
+    const placeholder = input.getAttribute('placeholder');
+    const value = input.value.trim();
+    if (placeholder === 'Nombre') {
+      nombre = value;
+    } 
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: alertMessage,
+      showConfirmButton: false,
+      timer: 3000,
+    });
+    localStorage.setItem('formData', JSON.stringify(formData));
+    form.reset()
+  });
+
+
+//BOTON para desplazar hacia arriba
 const irArribaBtn = document.getElementById('irArribaBtn');
 
 irArribaBtn.addEventListener('click', () => {
