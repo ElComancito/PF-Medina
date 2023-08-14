@@ -211,7 +211,7 @@ let carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
 let precioTotalGuardado = parseFloat(localStorage.getItem('preciototal')) || 0;
 
 
-// FORMULARIO de naim
+// FORMULARIO de Naim
 const form = document.querySelector('.form');
 const inputs = form.querySelectorAll('.input');
 
@@ -255,4 +255,4 @@ window.addEventListener('scroll', () => {
     } else {
         irArribaBtn.style.display = 'none';
     }
-});
+});})
