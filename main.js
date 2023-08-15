@@ -1,3 +1,11 @@
+// Recuperar datos del localStorage al cargar la página
+let carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
+let preciototalGuardado = parseInt(localStorage.getItem('preciototal')) || 0;
+
+// Restaurar los valores en caso de recarga
+carrito = carritoGuardado;
+preciototal = preciototalGuardado;
+
 class Container {
     constructor(id, tipo, modelo, precio, stock) {
         this.id = id;
@@ -52,7 +60,7 @@ function Agregaralcarrito(producto) {
         return;
     }
 
-    carritoGuardado.push(producto);
+    carrito.push(producto);
     producto.stock--;
     contenedorsimple_20pies.innerText = `Stock: ${producto1.stock}`;
     contenedorsimple_30pies.innerText = `Stock: ${producto2.stock}`;
@@ -62,9 +70,14 @@ function Agregaralcarrito(producto) {
     contenedorcasa_45m2.innerText = `Stock: ${producto6.stock}`;
     contenedorcasa_50m2.innerText = `Stock: ${producto7.stock}`;
     contenedorcasa_60m2.innerText = `Stock: ${producto8.stock}`;
-    precioTotalGuardado += producto.precio;
-    console.table(carritoGuardado);
-    console.log('Precio total: $', precioTotalGuardado);
+    preciototal += producto.precio;
+    console.table(carrito);
+    console.log('Precio total: $', preciototal);
+
+    // Guardar el carrito en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem('preciototal', preciototal);
+
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -82,6 +95,7 @@ function Agregaralcarrito(producto) {
         title: 'Agregado al carrito'
     });
 }
+
 
 //BOTONES CARRITO
 let boton1 = document.getElementById('botoncarrito20pies');
@@ -122,7 +136,7 @@ let boton9 = document.getElementById('header__button__carrito');
 boton9.addEventListener('click',mostrarAlerta)
 
 function mostrarAlerta() {
-    if (carritoGuardado.length === 0) {
+    if (carrito.length === 0) {
         Swal.fire({
             title: 'VACÍO',
             text: 'El carrito está vacío. Agrega productos para continuar.',
@@ -133,10 +147,10 @@ function mostrarAlerta() {
     }
 
     let mensaje = "";
-    for (let producto of carritoGuardado) {
+    for (let producto of carrito) {
         mensaje += `${producto.tipo} ${producto.modelo}<br>`;
     }
-    mensaje += `<br>Total: $${precioTotalGuardado}`;
+    mensaje += `<br>Total: $${preciototal}`;
 
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -163,11 +177,11 @@ function mostrarAlerta() {
                 'success'
             );
            
-            for (let producto of carritoGuardado) {
+            for (let producto of carrito) {
                 producto.stock--;  
             }
-            carritoGuardado = [];
-            precioTotalGuardado = 0;
+            carrito = [];
+            preciototal = 0;
         } else if (result.dismiss === Swal.DismissReason.cancel) {
             swalWithBootstrapButtons.fire(
                 'Compra cancelada.',
@@ -176,7 +190,7 @@ function mostrarAlerta() {
             );
 
             // Devolver el stock y vaciar el carrito
-            for (let producto of carritoGuardado) {
+            for (let producto of carrito) {
                 producto.stock++; 
                 contenedorsimple_20pies.innerText = `Stock: ${producto1.stock}`;
                 contenedorsimple_30pies.innerText = `Stock: ${producto2.stock}`;
@@ -187,28 +201,11 @@ function mostrarAlerta() {
                 contenedorcasa_50m2.innerText = `Stock: ${producto7.stock}`;
                 contenedorcasa_60m2.innerText = `Stock: ${producto8.stock}`;    
             }
-            carritoGuardado = [];
-            precioTotalGuardado = 0;
+            carrito = [];
+            preciototal = 0;
         }
     });
 }
-
-//JSON Y LOCALSTORAGE
-
-// Guardar productos en localStorage
-localStorage.setItem('productos', JSON.stringify(productos));
-
-// Recuperar productos de localStorage
-let productosGuardados = JSON.parse(localStorage.getItem('productos'));
-// Guardar carrito en localStorage
-localStorage.setItem('carrito', JSON.stringify(carrito));
-
-// Guardar precio total en localStorage
-localStorage.setItem('preciototal', preciototal);
-
-// Recuperar carrito y precio total desde localStorage
-let carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
-let precioTotalGuardado = parseFloat(localStorage.getItem('preciototal')) || 0;
 
 //BOTON para desplazar hacia arriba
 const irArribaBtn = document.getElementById('irArribaBtn');
