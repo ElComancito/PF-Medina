@@ -3,8 +3,8 @@ let carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
 let preciototalGuardado = parseInt(localStorage.getItem('preciototal')) || 0;
 
 // Restaurar los valores en caso de recarga
-carrito = carritoGuardado;
-preciototal = preciototalGuardado;
+let carrito = carritoGuardado = [];
+let preciototal = preciototalGuardado = 0;
 
 class Container {
     constructor(id, tipo, modelo, precio, stock) {
@@ -26,10 +26,6 @@ let producto7 = new Container(7, "Casa", "50 m2", 36000, 8);
 let producto8 = new Container(8, "Casa", "60 m2", 40000, 10);
 
 let productos = [producto1,producto2,producto3,producto4,producto5,producto6,producto7,producto8]
-let carrito = [];
-let preciototal = 0;
-
-//stock de productos 
 
 let stockProducto1 = document.getElementById('contenedorsimple_20pies');
 contenedorsimple_20pies.innerText = `Stock: ${producto1.stock}`;
@@ -73,11 +69,6 @@ function Agregaralcarrito(producto) {
     preciototal += producto.precio;
     console.table(carrito);
     console.log('Precio total: $', preciototal);
-
-    // Guardar el carrito en localStorage
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    localStorage.setItem('preciototal', preciototal);
-
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -94,6 +85,10 @@ function Agregaralcarrito(producto) {
         icon: 'success',
         title: 'Agregado al carrito'
     });
+
+    // Guardar el carrito en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem('preciototal', preciototal);
 }
 
 
@@ -188,8 +183,6 @@ function mostrarAlerta() {
                 '',
                 'error'
             );
-
-            // Devolver el stock y vaciar el carrito
             for (let producto of carrito) {
                 producto.stock++; 
                 contenedorsimple_20pies.innerText = `Stock: ${producto1.stock}`;
