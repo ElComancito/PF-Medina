@@ -143,9 +143,12 @@ function mostrarAlerta() {
 
     let mensaje = "";
     for (let producto of carrito) {
-        mensaje += `${producto.tipo} ${producto.modelo}<br>`;
+        mensaje += `${producto.tipo} ${producto.modelo}
+        <button class="btn btn-danger btn-sm custom-delete-btn" id="eliminar-${producto.id}" onclick="eliminarProducto(${producto.id})">
+            X
+        </button><br>`;
     }
-    mensaje += `<br>Total: $${preciototal}`;
+    mensaje += `<br>Total: U$D ${preciototal}`;
 
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
@@ -218,3 +221,37 @@ window.addEventListener('scroll', () => {
         irArribaBtn.style.display = 'none';
     }
 });
+
+function eliminarProducto(id) {
+    const productoIndex = carrito.findIndex(producto => producto.id === id);
+    if (productoIndex !== -1) {
+        const productoEliminado = carrito.splice(productoIndex, 1)[0];
+        preciototal -= productoEliminado.precio;
+        
+        // Incrementa el stock del producto eliminado (si es necesario)
+        const productoOriginal = productos.find(producto => producto.id === id);
+        if (productoOriginal) {
+            productoOriginal.stock++;
+        }
+        
+        // Actualiza la vista del carrito y los valores
+        actualizarVistaCarrito();
+        
+        // Guarda los cambios en localStorage
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        localStorage.setItem('preciototal', preciototal);
+    }
+}
+
+function actualizarVistaCarrito() {
+    // Actualiza los elementos de stock en la vista
+    contenedorsimple_20pies.innerText = `Stock: ${producto1.stock}`;
+    contenedorsimple_30pies.innerText = `Stock: ${producto2.stock}`;
+    // Repite para otros productos...
+    
+    // Actualiza el total en la vista
+    console.log('Precio total: $', preciototal);
+    
+    // Llama a mostrarAlerta para refrescar el mensaje en la vista
+    mostrarAlerta();
+}

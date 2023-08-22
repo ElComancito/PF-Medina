@@ -906,3 +906,13 @@ button#irArribaBtn {
   padding: 10px 20px;
   cursor: pointer;
 }
+
+/* Estilos personalizados para el botón de eliminar */
+.custom-delete-btn {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 10px;
+  margin-bottom: 2px;
+}
