@@ -931,6 +931,7 @@ button#irArribaBtn {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   display: none;
   width: 60%;
+  z-index: 1000;
 }
 
 #popup-mensaje.popup-active {
@@ -940,4 +941,25 @@ button#irArribaBtn {
 #popup-mensaje p{
   margin: 0;
   text-align: center;
+}
+
+/*API*/
+.dolar-box {
+  background-color: rgba(14, 121, 178, 0.573);;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  width: 400px; 
+  margin: 0 auto 100px;
+  font-size: 12px;
+}
+
+.dolar h2 {
+  font-size: 20px;
+  margin: 0 auto 50px;
+  width: 70%;
+  color: black;
+  text-align: center; 
 }

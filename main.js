@@ -270,16 +270,22 @@ boton.addEventListener("click", ()=>{
 })
 
 //FETCH
-fetch('../dolar.json')
+fetch("https://dolarapi.com/v1/dolares")
+fetch("https://dolarapi.com/v1/dolares")
 .then(response => response.json())
-.then(data =>{
-    const blue = data.blue;
-    const blueContainer = document.getElementById('dolarContainer')
-    
-    blue.forEach(blue => {
-        const blueElement = document.createElement('p');
-        blueElement.textContent = `Compra: ${blue.value_avg}, Venta: ${blue.value_sell}`;
-        blueContainer.appendChild(blueElement);
+.then(data => {
+    const dolarContainer = document.getElementById('dolarContainer');
+
+    data.forEach(item => {
+        const dolarElement = document.createElement('p');
+        const compraText = `Compra: ${item.compra}`;
+        const ventaText = `Venta: ${item.venta}`;
+        const casaText = `Casa: ${item.casa}`;
+        const nombreText = `Nombre: ${item.nombre}`;
+        const fechaText = `Fecha de Actualización: ${item.fechaActualizacion}`;
+        
+        dolarElement.innerHTML = `${nombreText}<br>${compraText}, ${ventaText}<br>${fechaText}`;
+        dolarContainer.appendChild(dolarElement);
     });
 })
 .catch(error => {
