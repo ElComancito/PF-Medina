@@ -255,3 +255,33 @@ function actualizarVistaCarrito() {
     // Llama a mostrarAlerta para refrescar el mensaje en la vista
     mostrarAlerta();
 }
+
+//Asincronía 
+
+const boton = document.getElementById("boton")
+const popup = document.getElementById("popup-mensaje")
+
+boton.addEventListener("click", ()=>{
+    popup.classList.add("popup-active")
+
+    setTimeout(()=>{
+        popup.classList.remove("popup-active")
+    },3500)
+})
+
+//FETCH
+fetch('../dolar.json')
+.then(response => response.json())
+.then(data =>{
+    const blue = data.blue;
+    const blueContainer = document.getElementById('dolarContainer')
+    
+    blue.forEach(blue => {
+        const blueElement = document.createElement('p');
+        blueElement.textContent = `Compra: ${blue.value_avg}, Venta: ${blue.value_sell}`;
+        blueContainer.appendChild(blueElement);
+    });
+})
+.catch(error => {
+    console.error('Hay un error:', error);
+});

@@ -513,6 +513,7 @@ p {
 }
 
 .zaha {
+  margin-top: 100px;
   margin-bottom: 100px;
   padding: 20px;
   border-radius: 10px;
@@ -915,4 +916,28 @@ button#irArribaBtn {
   padding: 5px 10px;
   font-size: 10px;
   margin-bottom: 2px;
+}
+
+/*POPUP*/
+
+#popup-mensaje {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0e79b2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  width: 60%;
+}
+
+#popup-mensaje.popup-active {
+  display: block;
+}
+
+#popup-mensaje p{
+  margin: 0;
+  text-align: center;
 }

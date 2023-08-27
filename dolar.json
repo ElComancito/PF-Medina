@@ -1,0 +1,23 @@
+{
+    "oficial": {
+      "value_avg": 362.00,
+      "value_sell": 367.00,
+      "value_buy": 357.00
+    },
+    "blue": {
+      "value_avg": 725.00,
+      "value_sell": 730.00,
+      "value_buy": 720.00
+    },
+    "oficial_euro": {
+      "value_avg": 393.50,
+      "value_sell": 399.00,
+      "value_buy": 388.00
+    },
+    "blue_euro": {
+      "value_avg": 788.00,
+      "value_sell": 793.00,
+      "value_buy": 783.00
+    },
+    "last_update": "2023-08-25T19:55:35.187221-03:00"
+  }
