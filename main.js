@@ -3,8 +3,8 @@ let carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
 let preciototalGuardado = parseInt(localStorage.getItem('preciototal')) || 0;
 
 // Restaurar los valores en caso de recarga
-let carrito = carritoGuardado = [];
-let preciototal = preciototalGuardado = 0;
+let carrito = carritoGuardado;
+let preciototal = preciototalGuardado;
 
 class Container {
     constructor(id, tipo, modelo, precio, stock) {
